@@ -1,5 +1,6 @@
-package io.github.manoelpiovesan;
+package io.github.manoelpiovesan.resources;
 
+import io.github.manoelpiovesan.services.EmbedService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
@@ -17,6 +18,11 @@ public class EmbedResource {
     @Inject
     EmbedService embedService;
 
+    /**
+     * Embed a document
+     * @param document the document to be embedded
+     * @return the embedding of the document
+     */
     @POST
     @Consumes(MediaType.TEXT_PLAIN)
     public Response embedResource(String document) {

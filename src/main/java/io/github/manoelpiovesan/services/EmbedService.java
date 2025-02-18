@@ -1,12 +1,12 @@
-package io.github.manoelpiovesan;
+package io.github.manoelpiovesan.services;
 
 
+import io.github.manoelpiovesan.clients.EmbedClient;
+import io.github.manoelpiovesan.entities.DocumentDTO;
+import io.github.manoelpiovesan.entities.EmbedDTO;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.json.Json;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
-
-import java.util.Map;
 
 /**
  * @author Manoel Rodrigues
@@ -17,6 +17,11 @@ public class EmbedService {
     @RestClient
     EmbedClient embedClient;
 
+    /**
+     * Get the embedding of a document
+     * @param document the document to be embedded
+     * @return the embedding of the document
+     */
     public float[] getEmbed(String document) {
         DocumentDTO documentDTO = new DocumentDTO(document);
         EmbedDTO response = embedClient.getEmbed(documentDTO);

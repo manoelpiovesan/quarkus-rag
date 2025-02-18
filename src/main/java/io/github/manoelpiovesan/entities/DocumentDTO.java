@@ -1,4 +1,4 @@
-package io.github.manoelpiovesan;
+package io.github.manoelpiovesan.entities;
 
 /**
  * @author Manoel Rodrigues
@@ -6,6 +6,10 @@ package io.github.manoelpiovesan;
 public class DocumentDTO {
     public String text;
 
+    /**
+     * Constructor
+     * @param text the text of the document
+     */
     public DocumentDTO(String text) {
         this.text = text;
     }
