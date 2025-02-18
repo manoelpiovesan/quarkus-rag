@@ -9,7 +9,8 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 /**
  * @author Manoel Rodrigues
  */
-@RegisterRestClient(baseUri = "http://localhost:5005")
+
+@RegisterRestClient(baseUri = "http://embedding-server:5005")
 public interface EmbedClient {
 
     /**
