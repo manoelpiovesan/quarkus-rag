@@ -1,22 +1,31 @@
 # RAG
 
-Criando um microserviço com flask para criar um endpoint de geração de embeddings de texto.
+RAG (Retrieval-Augmented Generation) é uma abordagem que combina recuperação de informações com geração de texto para
+melhorar a qualidade das respostas de modelos de linguagem.
 
-E persistindo usando Quarkus + Postgres (PGVector).
+## Objetivo
 
-Futuramente calculando o score de similaridade entre os embeddings de uma requisição e os embeddings persistidos.
+Criar um microserviço de geração de embeddings de texto com flask + torch.
+
+Criar um microserviço com quarkus para persistir os embeddings gerados e analisar a similaridade entre os embeddings
+persistidos e os embeddings de uma requisição.
+
+Enviar requisição para API da OpenAI para geração de texto junto com o embedding gerado.
 
 ## Rodando o projeto
 
 Buildar o Quarkus
+
 ```bash
 ./gradlew clean build
 ```
 
 Criar imagem docker do Quarkus
+
 ```bash
 docker build -f src/main/docker/Dockerfile.jvm -t quarkus-app .
 ```
+
 Subir a stack com docker-compose
 
 ```bash
