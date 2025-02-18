@@ -23,3 +23,11 @@ Docker-compose para subir o banco de dados e o microserviço.
 ```bash
 docker-compose up
 ```
+
+### Testing embed endpoint
+
+```bash
+curl -X POST "localhost:8080/embed" \
+     -H "Content-Type: text/plain" \
+     --data "Uma casa é amarela"
+```
