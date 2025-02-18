@@ -6,19 +6,18 @@ E persistindo usando Quarkus + Postgres (PGVector).
 
 Futuramente calculando o score de similaridade entre os embeddings de uma requisição e os embeddings persistidos.
 
-## Getting Started
+## Rodando o projeto
 
-Buildar quarkus
+Buildar o Quarkus
 ```bash
-    ./gradlew clean build
+./gradlew clean build
 ```
 
-Buildar imagem docker
+Criar imagem docker do Quarkus
 ```bash
-    docker build -f src/main/docker/Dockerfile.jvm -t quarkus-app .
+docker build -f src/main/docker/Dockerfile.jvm -t quarkus-app .
 ```
-
-Docker-compose para subir o banco de dados e o microserviço.
+Subir a stack com docker-compose
 
 ```bash
 docker-compose up
